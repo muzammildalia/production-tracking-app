@@ -6,14 +6,16 @@ import connectDb from './config/db.js';
 import authRoute from './routes/authRoute.js';
 import activityRoute from './routes/activityRoute.js';
 import cors from 'cors';
-import path from 'path'
-
+import path from 'path';
+import { fileURLToPath } from 'url';
 //config .env
 dotenv.config();
 
 //config database
 connectDb();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //rest object
 const app = express()
 
